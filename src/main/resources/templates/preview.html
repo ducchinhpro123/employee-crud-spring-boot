@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Ludens Users - 0 Profile Content</title>
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/fonts/fontawesome-all.min.css">
+  <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/fonts/fontawesome5-overrides.min.css">
+  <link rel="stylesheet" href="/assets/css/Dark-NavBar-Navigation-with-Button.css">
+  <link rel="stylesheet" href="/assets/css/Dark-NavBar-Navigation-with-Search.css">
+  <link rel="stylesheet" href="/assets/css/Dark-NavBar.css">
+</head>
+
+<body>
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-md sticky-top navigation-clean-button navbar-light"
+       style="height:80px;background-color:#37434d;color:#ffffff;">
+    <div class="container-fluid"><a class="navbar-brand" href="#"><i class="fa fa-bug" style="font-size: 30px;"></i>&nbsp;
+      Cơm Chín</a>
+      <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
+        class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" style="color:#ffffff;" href="#"><i class="fa fa-home"></i>&nbsp;Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="#"><i class="fa fa-wpexplorer"></i>&nbsp;Explore</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="#"><i class="fa fa-star-o"></i>&nbsp;Features</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="#"><i class="fa fa-user-circle-o"></i>&nbsp;Portfolio</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="#"><i class="fa fa-sign-in"></i>&nbsp;Sign
+            In</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <h3 class="text-dark mb-4">Profile</h3>
+  <div class="card shadow mb-3">
+    <div class="card-header py-3">
+      <p class="text-primary m-0 fw-bold">User Settings</p>
+    </div>
+    <div class="card-body">
+      <form th:object="${employee}">
+        <div class="row" style="margin-bottom: 25px;text-align: left;">
+          <div class="col-sm-4 col-md-4 col-lg-3 col-xl-2 col-xxl-2"
+               style="display: inline;text-align: center;margin-bottom: 25px;"><img
+            class="rounded-circle mb-3 mt-4 img-fluid" src="/assets/dogs/image2.jpeg"
+            style="display: inline;max-height: 110px;" alt="preview"><br>
+            <button class="btn btn-primary btn-sm" id="photoBtn" type="button">Change Photo</button>
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
+            <div class="row">
+              <div class="col-md-12 text-start">
+                <div class="mb-3">
+                  <label class="form-label" for="email"><strong>Email Address</strong></label>
+                  <input th:field="*{email}" class="form-control" type="email" id="email" placeholder="user@example.com"
+                         name="email" readonly>
+                </div>
+              </div>
+              <div class="col-md-12 text-start">
+                <div class="mb-3">
+                  <label class="form-label"><strong>Username</strong></label>
+                  <input th:value="${employee.firstName + ' ' + employee.lastName}" class="form-control" type="text"
+                         placeholder="Username" name="username" required="" readonly>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <p id="emailErrorMsg" class="text-danger" style="display:none;"></p>
+            <p id="passwordErrorMsg" class="text-danger" style="display:none;"></p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <button class="btn btn-primary float-start p-2" type="button"
+          style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;">
+    <a th:href="@{/}" class="text-bg-success">Back</a>
+  </button>
+</div>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<!--<script src="https://geodata.solutions/includes/countrystate.js"></script>-->
+</body>
+
+</html>

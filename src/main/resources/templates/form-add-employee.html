@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>07-design-bootstrap</title>
+  <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
+  <link rel="stylesheet" href="/assets/fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/fonts/simple-line-icons.min.css">
+  <link rel="stylesheet" href="/assets/fonts/typicons.min.css">
+  <link rel="stylesheet" href="/assets/css/Dark-NavBar-Navigation-with-Button.css">
+  <link rel="stylesheet" href="/assets/css/Dark-NavBar-Navigation-with-Search.css">
+  <link rel="stylesheet" href="/assets/css/Dark-NavBar.css">
+  <link rel="stylesheet" href="/assets/css/Form.css">
+  <link rel="stylesheet" href="/assets/css/FPE-Gentella-form-elements-custom.css">
+  <link rel="stylesheet" href="/assets/css/FPE-Gentella-form-elements.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/css/theme.bootstrap_4.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" href="/assets/css/Ludens---1-Index-Table-with-Search--Sort-Filters-v20.css">
+  <link rel="stylesheet" href="/assets/css/Modern-Contact-Form.css">
+  <link rel="stylesheet" href="/assets/css/Multi-step-form.css">
+</head>
+
+<body  style="background: var(--bs-secondary-bg-subtle);">
+<div>
+  <nav class="navbar navbar-expand-md sticky-top navigation-clean-button navbar-light"
+       style="height:80px;background-color:#37434d;color:#ffffff;">
+    <div class="container-fluid"><a class="navbar-brand" href="#"><i class="fa fa-bug" style="font-size: 30px;"></i>&nbsp;
+      Cơm Chín</a>
+      <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
+        class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navcol-1">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" style="color:#ffffff;" href="#"><i class="fa fa-home"></i>&nbsp;Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="#"><i class="fa fa-wpexplorer"></i>&nbsp;Explore</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="#"><i class="fa fa-star-o"></i>&nbsp;Features</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="#"><i class="fa fa-user-circle-o"></i>&nbsp;Portfolio</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="color:#ffffff;" href="#"><i class="fa fa-sign-in"></i>&nbsp;Sign
+            In</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+<div class="container text-center d-md-flex justify-content-md-center">
+  <div class="col-md-9 d-md-flex justify-content-md-center">
+    <form th:action="@{/employees/save}" th:object="${employee}" method="post">
+      <h1 style="font-size: 20px;">
+        <i class="icon-user" style="color: #00baff;padding-right: 15px;"></i>
+        Employee information
+      </h1>
+      <label>
+        <input class="border rounded-0 form-control" type="text"
+               style="width: 500px;margin-bottom: 15px;" placeholder="First Name"
+        th:field="*{firstName}">
+      </label>
+      <label>
+        <input
+          class="border rounded-0 form-control" type="text" style="width: 500px;margin-bottom: 15px;"
+          placeholder="Last Name" th:field="*{lastName}">
+      </label>
+      <label>
+        <input class="border rounded-0 form-control" type="email"
+               style="width: 500px;margin-bottom: 15px;" placeholder="Email" th:field="*{email}">
+      </label>
+      <br>
+
+      <button class="btn btn-primary" type="submit"
+              style="width: 500px;margin-right: 0px;background-color: #00baff;margin-left: 10px;">Save
+      </button>
+      <br>
+      <button class="btn btn-primary float-start p-2" type="button"
+              style="margin-left: 0px;margin-right: 0px;padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;">
+        <a th:href="@{/}">Back</a>
+      </button>
+    </form>
+  </div>
+</div>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/jquery.tablesorter.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-filter.min.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-storage.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script
+  src="/assets/js/Ludens---1-Index-Table-with-Search--Sort-Filters-v20-Ludens---1-Index-Table-with-Search--Sort-Filters.js"></script>
+<script src="/assets/js/Ludens---1-Index-Table-with-Search--Sort-Filters-v20-Ludens---Material-UI-Actions.js"></script>
+<script src="/assets/js/Multi-step-form-script.js"></script>
+</body>
+
+</html>
